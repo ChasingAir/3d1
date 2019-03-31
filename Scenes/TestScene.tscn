@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/TestScene.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/GroundPlane.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Tesuto.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Tesuto.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=6]
+
+[node name="TestScene" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="GroundPlane" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+
+[node name="Tesuto" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.95045, 0.263579, 0.164837, -0.249976, 0.963196, -0.0988161, -0.184817, 0.0527144, 0.981358, -5, 2, -1 )
+script = ExtResource( 4 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+script = ExtResource( 6 )
+
+[node name="Head" type="Spatial" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Camera" type="Camera" parent="Player/Head"]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0, 0, 0 )
+
