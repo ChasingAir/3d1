@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/TestScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/GroundPlane.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/Player.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/Tesuto.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Tesuto.gd" type="Script" id=6]
-[ext_resource path="res://Scenes/house.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/hut.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/man.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Tesuto.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Tesuto.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/house.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/hut.tscn" type="PackedScene" id=9]
 
 [node name="TestScene" type="Spatial"]
 script = ExtResource( 1 )
@@ -15,9 +16,12 @@ script = ExtResource( 1 )
 [node name="GroundPlane" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
+[node name="Sprite3D" parent="GroundPlane" instance=ExtResource( 3 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -0.0532961, 1.46891, -0.302793 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="Head" type="Spatial" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
@@ -25,78 +29,78 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 [node name="Camera" type="Camera" parent="Player/Head"]
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0, 0, 0 )
 
-[node name="Tesuto" parent="." instance=ExtResource( 5 )]
+[node name="Tesuto" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, -1 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
-[node name="Tesuto8" parent="." instance=ExtResource( 5 )]
+[node name="Tesuto8" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.0555, 3, -23.6616 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
-[node name="Tesuto3" parent="." instance=ExtResource( 5 )]
+[node name="Tesuto3" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.422618, 0, 0.906308, 0, 1, 0, -0.906308, 0, 0.422618, 2, 4, -7 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
-[node name="Tesuto4" parent="." instance=ExtResource( 5 )]
+[node name="Tesuto4" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.144544, 0.939693, 0.309976, -0.397131, 0.34202, -0.851651, -0.906308, 0, 0.422618, 10, 3, 1 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
-[node name="Tesuto12" parent="." instance=ExtResource( 5 )]
+[node name="Tesuto12" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.144544, 0.939693, 0.309976, -0.397131, 0.34202, -0.851651, -0.906308, 0, 0.422618, 10.4932, 3, -35.6504 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
-[node name="Tesuto10" parent="." instance=ExtResource( 5 )]
+[node name="Tesuto10" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.144544, 0.939693, 0.309976, -0.397131, 0.34202, -0.851651, -0.906308, 0, 0.422618, 7.34848, 3.54719, 23.09 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
-[node name="Tesuto5" parent="." instance=ExtResource( 5 )]
+[node name="Tesuto5" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.109382, -0.965926, 0.23457, 0.408218, 0.258819, 0.875426, -0.906308, 0, 0.422618, 5, 5, 7 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
-[node name="Tesuto11" parent="." instance=ExtResource( 5 )]
+[node name="Tesuto11" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.109382, -0.965926, 0.23457, 0.408218, 0.258819, 0.875426, -0.906308, 0, 0.422618, 28.6273, 5, -4.57942 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
-[node name="Tesuto7" parent="." instance=ExtResource( 5 )]
+[node name="Tesuto7" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.109382, -0.965926, 0.23457, 0.408218, 0.258819, 0.875426, -0.906308, 0, 0.422618, -10.4412, 5, -28.1541 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
-[node name="Tesuto6" parent="." instance=ExtResource( 5 )]
+[node name="Tesuto6" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.109382, -0.965926, 0.23457, 0.408218, 0.258819, 0.875426, -0.906308, 0, 0.422618, -29.9372, 5, 28.5097 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
-[node name="Tesuto2" parent="." instance=ExtResource( 5 )]
+[node name="Tesuto2" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.642788, 0.766044, 0, -0.766044, 0.642788, 0, 0, 0, 1, -5, 0, 5 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
-[node name="Tesuto9" parent="." instance=ExtResource( 5 )]
+[node name="Tesuto9" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.642788, 0.766044, 0, -0.766044, 0.642788, 0, 0, 0, 1, 26.1786, 0, 20.5093 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
-[node name="house" parent="." instance=ExtResource( 7 )]
+[node name="house" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.906308, 0, -0.422618, 0, 1, 0, 0.422618, 0, 0.906308, -20.0892, 1.09185, -19.5958 )
 
-[node name="house2" parent="." instance=ExtResource( 7 )]
+[node name="house2" parent="." instance=ExtResource( 8 )]
 transform = Transform( 0.875621, 0, 0.482999, 0, 1, 0, -0.482999, 0, 0.875621, -20.9325, 1.17667, 9.8876 )
 
-[node name="house3" parent="." instance=ExtResource( 7 )]
+[node name="house3" parent="." instance=ExtResource( 8 )]
 transform = Transform( -0.999569, 0, 0.0293579, 0, 1, 0, -0.0293579, 0, -0.999569, 37.962, 1.17956, 5.72539 )
 
-[node name="house5" parent="." instance=ExtResource( 7 )]
+[node name="house5" parent="." instance=ExtResource( 8 )]
 transform = Transform( -0.0728259, 0, 0.997345, 0, 1, 0, -0.997345, 0, -0.0728259, 12.4602, 1.46839, 39.8215 )
 
-[node name="house4" parent="." instance=ExtResource( 7 )]
+[node name="house4" parent="." instance=ExtResource( 8 )]
 transform = Transform( -0.999569, 0, 0.0293579, 0, 1, 0, -0.0293579, 0, -0.999569, 40.4938, 1.15358, -12.8247 )
 
-[node name="hut" parent="." instance=ExtResource( 8 )]
+[node name="hut" parent="." instance=ExtResource( 9 )]
 transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 10.5793, 0.683092, -13.9426 )
 
-[node name="hut2" parent="." instance=ExtResource( 8 )]
+[node name="hut2" parent="." instance=ExtResource( 9 )]
 transform = Transform( 0.0633033, 0, 0.997994, 0, 1, 0, -0.997994, 0, 0.0633033, -26.8959, 0.683092, -5.63934 )
 
-[node name="hut3" parent="." instance=ExtResource( 8 )]
+[node name="hut3" parent="." instance=ExtResource( 9 )]
 transform = Transform( -0.980044, 0, 0.19878, 0, 1, 0, -0.19878, 0, -0.980044, -6.08592, 0.683092, 36.0379 )
 
-[node name="hut4" parent="." instance=ExtResource( 8 )]
+[node name="hut4" parent="." instance=ExtResource( 9 )]
 transform = Transform( -0.923668, 0, -0.383195, 0, 1, 0, 0.383195, 0, -0.923668, 30.753, 0.683092, 35.5692 )
 
