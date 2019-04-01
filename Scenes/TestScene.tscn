@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/TestScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/GroundPlane.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/house.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/hut.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/test_pixels.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Grass1.tscn" type="PackedScene" id=11]
 
 [node name="TestScene" type="Spatial"]
 script = ExtResource( 1 )
@@ -107,4 +108,31 @@ transform = Transform( -0.923668, 0, -0.383195, 0, 1, 0, 0.383195, 0, -0.923668,
 
 [node name="test_pixels" parent="." instance=ExtResource( 10 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 3.75609, 2, -4.38162 )
+
+[node name="Grass1" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -0.95, 0.171737, 0.71 )
+
+[node name="Grass2" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 8.55752, 0.171737, 4.82845 )
+
+[node name="Grass3" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 1.35732, 0.171736, 11.1086 )
+
+[node name="Grass4" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -10.8134, 0.171737, 4.26666 )
+
+[node name="Grass5" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -6.96712, 0.171737, 8.90255 )
+
+[node name="Grass6" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 6.33015, 0.171737, -7.58141 )
+
+[node name="Grass7" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 9.73804, 0.171736, -7.11501 )
+
+[node name="Grass8" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 12.1009, 0.171737, -2.74736 )
+
+[node name="Grass9" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 7.95926, 0.171737, 1.17669 )
 
