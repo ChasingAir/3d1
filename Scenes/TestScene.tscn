@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/TestScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/GroundPlane.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Tesuto.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Tesuto.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/house.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/hut.tscn" type="PackedScene" id=8]
 
 [node name="TestScene" type="Spatial"]
 script = ExtResource( 1 )
@@ -43,4 +45,10 @@ script = ExtResource( 6 )
 [node name="Tesuto2" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.642788, 0.766044, 0, -0.766044, 0.642788, 0, 0, 0, 1, -5, 0, 5 )
 script = ExtResource( 6 )
+
+[node name="house" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.906308, 0, -0.422618, 0, 1, 0, 0.422618, 0, 0.906308, -9.26165, 1.09185, -11.7887 )
+
+[node name="hut" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 10.5793, 0.683092, -13.9426 )
 
