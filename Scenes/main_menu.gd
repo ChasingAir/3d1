@@ -23,7 +23,7 @@ func play():
 	get_tree().change_scene("res://Scenes/TestScene.tscn")
 
 func options():
-	pass
+	get_tree().change_scene("res://Scenes/options_menu.tscn")
 
 func quit():
 	get_tree().quit()

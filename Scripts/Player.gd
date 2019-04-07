@@ -17,7 +17,8 @@ const MAX_SPEED = 10
 const MAX_RUNNING_SPEED = 18
 const MAX_CROUCH_SPEED = 3
 const ACCEL = 2
-const DEACCEL = 10
+const DEACCEL = 20
+var walk_frame = 0
 
 #jumping
 var jump_height = 10
@@ -99,6 +100,13 @@ func walk(delta):
 	
 	#move
 	velocity = move_and_slide(velocity, Vector3(0,1,0), 0.15)
+	
+	#play sound
+	if velocity.x > 1 or velocity.x < -1 or velocity.z > 1 or velocity.z < -1:
+		walk_frame += 1
+		if walk_frame > 40:
+			walk_frame = 0
+			$WalkSFX.play()
 
 func fly(delta):
 	#reset the direction of the player
