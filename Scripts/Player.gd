@@ -12,7 +12,7 @@ const FLY_SPEED = 40
 const FLY_ACCEL = 4
 
 #walk variables
-var gravity = -9.8 * 3
+var gravity = -9.8 * 5
 const MAX_SPEED = 10
 const MAX_RUNNING_SPEED = 18
 const MAX_CROUCH_SPEED = 3
@@ -21,7 +21,7 @@ const DEACCEL = 20
 var walk_frame = 0
 
 #jumping
-var jump_height = 10
+var jump_height = 15
 var in_air = 0
 var has_contact = false
 
