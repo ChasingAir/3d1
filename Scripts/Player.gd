@@ -104,7 +104,8 @@ func walk(delta):
 	#play sound
 	if velocity.x > 1 or velocity.x < -1 or velocity.z > 1 or velocity.z < -1:
 		walk_frame += 1
-		if walk_frame > 40:
+		var walk_sfx_speed = (velocity.x + velocity.z) / 10
+		if walk_frame > walk_sfx_speed:
 			walk_frame = 0
 			$WalkSFX.play()
 
