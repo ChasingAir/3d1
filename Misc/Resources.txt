@@ -1,2 +1,4 @@
 Blender to Godot: "Better Collada Exporter"
 https://github.com/godotengine/collada-exporter
+
+Pixel scale: 1px/cm

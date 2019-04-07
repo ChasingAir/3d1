@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Grass 3.png" type="Texture" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+params_billboard_mode = 2
+
+[node name="Grass3" type="Sprite3D"]
+material_override = SubResource( 1 )
+offset = Vector2( 0, 5 )
+pixel_size = 0.05
+texture = ExtResource( 1 )
+
