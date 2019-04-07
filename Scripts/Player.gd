@@ -35,6 +35,13 @@ func _physics_process(delta):
 func _input(event):
 	if event is InputEventMouseMotion: #If there is mouse input
 		camera_change = event.relative
+	
+	if Input.is_mouse_button_pressed(BUTTON_LEFT): #if clicking the mouse
+		$Head/Camera/Hand1/Sprite.visible = false #extend hand
+		$Head/Camera/Hand1/SpriteExtend.visible = true
+	else: #otherwise
+		$Head/Camera/Hand1/Sprite.visible = true #dont extend hand
+		$Head/Camera/Hand1/SpriteExtend.visible = false
 
 func walk(delta):
 	#reset the direction of the player
@@ -104,8 +111,7 @@ func walk(delta):
 	#play sound
 	if velocity.x > 1 or velocity.x < -1 or velocity.z > 1 or velocity.z < -1:
 		walk_frame += 1
-		var walk_sfx_speed = (velocity.x + velocity.z) / 10
-		if walk_frame > walk_sfx_speed:
+		if walk_frame > (abs(velocity.x) + abs(velocity.z)) * 4:
 			walk_frame = 0
 			$WalkSFX.play()
 
