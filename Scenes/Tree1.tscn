@@ -3,7 +3,7 @@
 [ext_resource path="res://Sprites/Tree1.png" type="Texture" id=1]
 
 [sub_resource type="CylinderShape" id=1]
-radius = 0.5
+radius = 0.2
 height = 1.75
 
 [node name="Tree1" type="Sprite3D"]

@@ -14,7 +14,7 @@ const FLY_ACCEL = 4
 #walk variables
 var gravity = -9.8 * 5
 const MAX_SPEED = 10
-const MAX_RUNNING_SPEED = 18
+const MAX_RUNNING_SPEED = 15
 const MAX_CROUCH_SPEED = 3
 const ACCEL = 2
 const DEACCEL = 20
@@ -39,6 +39,13 @@ func _input(event):
 	if Input.is_mouse_button_pressed(BUTTON_LEFT): #if clicking the mouse
 		$Head/Camera/Hand1/Sprite.visible = false #extend hand
 		$Head/Camera/Hand1/SpriteExtend.visible = true
+		#shoot projectile -------------------------------------------------------------this isnt working--------------------------------------
+		#var projectile1 = load("res://Scenes/Projectile1.tscn")
+		#var projectile1_instance = projectile1.instance()
+		#projectile1_instance.set_name("projectile1")
+		#projectile1_instance.position(Vector3(1,0,0))
+		#add_child(projectile1_instance)
+		
 	else: #otherwise
 		$Head/Camera/Hand1/Sprite.visible = true #dont extend hand
 		$Head/Camera/Hand1/SpriteExtend.visible = false
@@ -108,10 +115,10 @@ func walk(delta):
 	#move
 	velocity = move_and_slide(velocity, Vector3(0,1,0), 0.15)
 	
-	#play sound
+	#play sound WE SHOULD PROBABLY MULTIPLY THIS BY DELTA
 	if velocity.x > 1 or velocity.x < -1 or velocity.z > 1 or velocity.z < -1:
 		walk_frame += 1
-		if walk_frame > (abs(velocity.x) + abs(velocity.z)) * 4:
+		if walk_frame > 50 - ((abs(velocity.x) + abs(velocity.z)) * 2):
 			walk_frame = 0
 			$WalkSFX.play()
 

@@ -4,6 +4,7 @@
 [ext_resource path="res://UI/Hand2.png" type="Texture" id=2]
 
 [node name="Hand1" type="Node2D"]
+scale = Vector2( 0.75, 0.75 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 5, 5 )

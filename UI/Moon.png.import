@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Projectile.png-a3a119d8fd8345a39899211a3cae4b28.s3tc.stex"
-path.etc2="res://.import/Projectile.png-a3a119d8fd8345a39899211a3cae4b28.etc2.stex"
+path.s3tc="res://.import/Moon.png-daf9477ee01246e324e25da70feaa090.s3tc.stex"
+path.etc2="res://.import/Moon.png-daf9477ee01246e324e25da70feaa090.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Sprites/Projectile.png"
-dest_files=[ "res://.import/Projectile.png-a3a119d8fd8345a39899211a3cae4b28.s3tc.stex", "res://.import/Projectile.png-a3a119d8fd8345a39899211a3cae4b28.etc2.stex" ]
+source_file="res://UI/Moon.png"
+dest_files=[ "res://.import/Moon.png-daf9477ee01246e324e25da70feaa090.s3tc.stex", "res://.import/Moon.png-daf9477ee01246e324e25da70feaa090.etc2.stex" ]
 
 [params]
 
@@ -22,9 +22,9 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
-flags/filter=false
-flags/mipmaps=false
-flags/anisotropic=false
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=true
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
