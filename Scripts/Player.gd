@@ -16,7 +16,7 @@ var gravity = -9.8 * 5
 const MAX_SPEED = 10
 const MAX_RUNNING_SPEED = 15
 const MAX_CROUCH_SPEED = 3
-const ACCEL = 2
+const ACCEL = 5
 const DEACCEL = 20
 var walk_frame = 0
 
@@ -71,7 +71,7 @@ func walk(delta):
 	if (is_on_floor()):
 		has_contact = true
 	else:
-		if !$TailCast.is_colliding():
+		if !$FeetCast.is_colliding():
 			has_contact = false
 	if (has_contact and !is_on_floor()):
 		move_and_collide(Vector3(0,-1,0))
@@ -120,7 +120,7 @@ func walk(delta):
 		walk_frame += 1
 		if walk_frame > 50 - ((abs(velocity.x) + abs(velocity.z)) * 2):
 			walk_frame = 0
-			$WalkSFX.play()
+			$WalkSFX3D.play()
 
 func fly(delta):
 	#reset the direction of the player
@@ -155,6 +155,6 @@ func aim():
 		
 		var change = camera_change.y * .05 * mouse_sensitivity
 		if change + camera_angle < 90 and change + camera_angle > -90:
-			$Head/Camera.rotate_z(deg2rad(change))
+			$Head/Camera.rotate_x(deg2rad(-change))
 			camera_angle += change
 		camera_change = Vector2()

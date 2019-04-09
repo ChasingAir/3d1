@@ -20,10 +20,10 @@ func _process(delta):
 		quit()
 
 func play():
-	get_tree().change_scene("res://Scenes/TestScene.tscn")
+	get_tree().change_scene("res://Scenes/Levels/Village.tscn")
 
 func options():
-	get_tree().change_scene("res://Scenes/options_menu.tscn")
+	get_tree().change_scene("res://Scenes/Menus/options_menu.tscn")
 
 func quit():
 	get_tree().quit()

@@ -30,3 +30,11 @@ margin_right = 224.104
 margin_bottom = 369.124
 flat = true
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 300.0
+margin_top = -147.0
+margin_right = 464.0
+margin_bottom = -111.0
+text = "Reset Scene: R
+Menu: Esc"
+
