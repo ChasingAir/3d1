@@ -18,7 +18,7 @@ script = ExtResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
-transform = Transform( -0.999451, 0, 0.0331202, 0, 1, 0, -0.0331202, 0, -0.999451, -0.0150261, 1.45765, 0.00686264 )
+transform = Transform( -0.499726, 0, 0.0165601, 0, 0.5, 0, -0.0165601, 0, -0.499726, -0.0150261, 1.45765, 0.00686264 )
 
 [node name="moon" parent="Player" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.1179, 23.4506, 4.64191 )
@@ -27,10 +27,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.1179, 23.4506, 4.64191 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.95784, 0, -8.6253 )
 
 [node name="house" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6963, 0.993704, 0.00500333 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6963, -0.00786328, 0.00500333 )
 
 [node name="hut" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.18924, 0.502687, -14.2979 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.18924, -0.0052371, -14.2979 )
 
 [node name="Grasses" type="Spatial" parent="."]
 editor/display_folded = true
