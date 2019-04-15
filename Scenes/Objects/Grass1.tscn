@@ -9,5 +9,6 @@ params_billboard_mode = 2
 [node name="Grass1" type="Sprite3D"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125223, 0 )
 material_override = SubResource( 1 )
+pixel_size = 0.02
 texture = ExtResource( 1 )
 

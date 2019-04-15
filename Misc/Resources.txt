@@ -2,3 +2,9 @@ Blender to Godot: "Better Collada Exporter"
 https://github.com/godotengine/collada-exporter
 
 Pixel scale: 1px/cm
+
+Current Scales
+Tree1: 2x
+Grass1/2/3: 5x
+Hut1: .75x
+Moon: .5x

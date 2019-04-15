@@ -12,16 +12,17 @@ const FLY_SPEED = 40
 const FLY_ACCEL = 4
 
 #walk variables
-var gravity = -9.8 * 5
-const MAX_SPEED = 10
-const MAX_RUNNING_SPEED = 15
-const MAX_CROUCH_SPEED = 3
+var gravity = -9.8 * 3
+const MAX_SPEED = 5
+const MAX_RUNNING_SPEED = 9
+const MAX_CROUCH_SPEED = 2
 const ACCEL = 5
-const DEACCEL = 20
+const DEACCEL = 10
+const WALK_SOUND_SPEED = 20
 var walk_frame = 0
 
 #jumping
-var jump_height = 15
+var jump_height = 8
 var in_air = 0
 var has_contact = false
 
@@ -69,9 +70,11 @@ func walk(delta):
 	direction = direction.normalized()
 	
 	if (is_on_floor()):
+		global.player_on_ground = true
 		has_contact = true
 	else:
 		if !$FeetCast.is_colliding():
+			global.player_on_ground = false
 			has_contact = false
 	if (has_contact and !is_on_floor()):
 		move_and_collide(Vector3(0,-1,0))
@@ -82,15 +85,30 @@ func walk(delta):
 	var temp_velocity = velocity
 	temp_velocity.y = 0
 	
-	#figure out what speed to be moving
+	#figure out what speed to be moving & if crouching
 	var speed
 	if Input.is_action_pressed("move_sprint"): #if sprint key, sprint speed. this takes precedence
 		speed = MAX_RUNNING_SPEED
+		jump_height = 8
+		var capsule = $CollisionShape.get("shape")
+		capsule.set("height", 1.5)
+		if $Head.translation.y < 1: #make sure no longer crouched
+				$Head.translate(Vector3(0,.1,0))
 	else:
 		if Input.is_action_pressed("crouch"): #if crouch key, and not sprint key, crouch speed
 			speed = MAX_CROUCH_SPEED
+			jump_height = 4
+			var capsule = $CollisionShape.get("shape")
+			capsule.set("height", .75) #-----------------------------------------------------------------------THIS NEEDS WORK
+			if $Head.translation.y > 0: #make sure crouched
+				$Head.translate(Vector3(0,-.1,0))
 		else:
 			speed = MAX_SPEED #if neither modifier key is pressed, use base speed
+			jump_height = 8
+			var capsule = $CollisionShape.get("shape")
+			capsule.set("height", 1.5)
+			if $Head.translation.y < 1: #make sure not crouched
+				$Head.translate(Vector3(0,.1,0))
 	
 	#where would the player go at max speed
 	var target = direction * speed
@@ -114,13 +132,15 @@ func walk(delta):
 	
 	#move
 	velocity = move_and_slide(velocity, Vector3(0,1,0), 0.15)
+	global.current_total_velocity = abs(velocity.x) + abs(velocity.z)  #update the global speed so we can reference it elseware
 	
-	#play sound WE SHOULD PROBABLY MULTIPLY THIS BY DELTA
-	if velocity.x > 1 or velocity.x < -1 or velocity.z > 1 or velocity.z < -1:
-		walk_frame += 1
-		if walk_frame > 50 - ((abs(velocity.x) + abs(velocity.z)) * 2):
-			walk_frame = 0
-			$WalkSFX3D.play()
+	#play sound
+	if velocity.x > .5 or velocity.x < -.5 or velocity.z > .5 or velocity.z < -.5: #if moving
+		if global.player_on_ground == true: #and on ground
+			walk_frame += 1
+			if walk_frame > 2500 * delta - (2 * global.current_total_velocity):
+				walk_frame = 0
+				$WalkSFX3D.play()
 
 func fly(delta):
 	#reset the direction of the player

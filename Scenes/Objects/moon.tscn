@@ -9,5 +9,6 @@ params_billboard_mode = 1
 
 [node name="moon" type="Sprite3D"]
 material_override = SubResource( 1 )
+pixel_size = 0.005
 texture = ExtResource( 1 )
 
