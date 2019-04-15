@@ -34,7 +34,10 @@ flat = true
 margin_left = 300.0
 margin_top = -147.0
 margin_right = 464.0
-margin_bottom = -111.0
+margin_bottom = -62.0
 text = "Reset Scene: R
-Menu: Esc"
+Menu: Esc
+
+Sprint: Left Shift
+Crouch: Left Control"
 
