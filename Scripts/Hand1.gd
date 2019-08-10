@@ -12,11 +12,12 @@ func _ready():
 func _process(delta): #called every frame
 	if global.current_total_velocity > 1 and global.player_on_ground == true: #if moving & on ground
 		if x < (bob_amount * delta) - global.current_total_velocity:
-			translate(Vector2(.25,.5))
+			hand_position = get("position")
+			hand_position.set = Vector2(.25,.5)
 			x += 1
 		else: #(greater than 100)
 			if x < ((bob_amount * delta) - global.current_total_velocity) * 2:
-				translate(Vector2(-.25,-.5))
+				Position2D(Vector2(-.25,-.5))
 				x += 1
 			else:
 				x = 0

@@ -99,7 +99,7 @@ func walk(delta):
 			speed = MAX_CROUCH_SPEED
 			jump_height = 4
 			var capsule = $CollisionShape.get("shape")
-			capsule.set("height", .75) #-----------------------------------------------------------------------THIS NEEDS WORK
+			capsule.set("height", .75)
 			if $Head.translation.y > 0: #make sure crouched
 				$Head.translate(Vector3(0,-.1,0))
 		else:
